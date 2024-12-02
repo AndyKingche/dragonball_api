@@ -10,22 +10,22 @@ class CharacterModel : Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "chracter_id")
-    var id: Long? = 0;
+    @Column(name = "character_id")
+    var id: Long? = null
 
     @Column(name = "character_name")
-    var name: String? = ""
+    var name: String? = null
 
     @Column(name = "character_age")
-    var age: Int? = 0;
+    var age: Int? = null
 
     @Column(name = "character_desc")
-    var desc: String? = "";
+    var desc: String? = null
 
     @Column(name = "character_image")
-    var image: String? = ""
+    var image: String? = null
 
     @Column(name = "character_powerlevel")
-    var powerLevel: Int? = 0
+    var powerLevel: Int? = null
 
 }
