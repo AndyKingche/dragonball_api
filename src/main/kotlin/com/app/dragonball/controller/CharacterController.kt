@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.CrossOrigin
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -88,6 +89,44 @@ class CharacterController @Autowired constructor (
             val badMessage = MessagesDTO().apply {
                 message = "Invalid input: ${e.message}"
                 method = "PUT"
+                status = false
+            }
+            ResponseEntity(badMessage, HttpStatus.BAD_REQUEST)
+        }
+        catch (e: Exception){
+
+            ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping("delete-character/{id}")
+    fun deleteCharacter(@PathVariable("id") id: Long): ResponseEntity<Any> {
+        return try {
+            val deleteCharacter = characterService.deleteCharacter(id)
+
+            if(deleteCharacter){
+                val message = MessagesDTO().apply {
+                    message = "Person deleted with ID ${id} "
+                    method = "DELETE"
+                    status = true
+                }
+
+                ResponseEntity(message, HttpStatus.OK)
+            }else{
+                val badMessage = MessagesDTO().apply {
+                    message = "Person didnt delete with ID ${id} , because the person does not exist."
+                    method = "DELETE"
+                    status = false
+                }
+                ResponseEntity(badMessage, HttpStatus.BAD_REQUEST)
+            }
+
+
+        }catch (e: IllegalArgumentException){
+
+            val badMessage = MessagesDTO().apply {
+                message = "Invalid input: ${e.message}"
+                method = "DELETE"
                 status = false
             }
             ResponseEntity(badMessage, HttpStatus.BAD_REQUEST)
