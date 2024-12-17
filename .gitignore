@@ -5,8 +5,8 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
-# Ignore the .env file containing sensitive variables
-.env
+# Ignore the .json file containing sensitive variables
+/src/main/resources/*.json
 
 ### STS ###
 .apt_generated

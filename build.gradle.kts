@@ -36,6 +36,7 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
+	implementation("com.google.firebase:firebase-common-ktx:21.0.0")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.postgresql:postgresql")
@@ -45,6 +46,10 @@ dependencies {
 	testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	implementation("com.google.firebase:firebase-storage:21.0.0")
+	implementation("io.github.cdimascio:dotenv-kotlin:6.5.0")
+	implementation("com.google.firebase:firebase-common-ktx:21.0.0")
+	implementation("com.google.firebase:firebase-admin:9.0.0")
+	implementation("com.google.auth:google-auth-library-oauth2-http:0.27.0")
 }
 
 kotlin {
