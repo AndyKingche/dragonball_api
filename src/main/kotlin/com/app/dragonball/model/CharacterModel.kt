@@ -1,3 +1,5 @@
+@file:Suppress("ktlint:standard:no-wildcard-imports")
+
 package com.app.dragonball.model
 
 import jakarta.persistence.*
@@ -7,7 +9,6 @@ import java.io.Serializable
 @Table(name = "character")
 @NamedQuery(name = "CharacterModel", query = "SELECT c FROM CharacterModel c")
 class CharacterModel : Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "character_id")
@@ -27,5 +28,4 @@ class CharacterModel : Serializable {
 
     @Column(name = "character_powerlevel")
     var powerLevel: Int? = null
-
 }

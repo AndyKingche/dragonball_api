@@ -10,7 +10,10 @@ interface CharacterService {
 
     fun createCharacter(newCharacter: CharacterModel): CharacterModel
 
-    fun updateCharacter(id: Long , updatedCharacter: CharacterModel): Optional<CharacterModel>
+    fun updateCharacter(
+        id: Long,
+        updatedCharacter: CharacterModel,
+    ): Optional<CharacterModel>
 
     fun deleteCharacter(id: Long): Boolean
 }

@@ -1,4 +1,4 @@
-package com.app.dragonball.DTO
+package com.app.dragonball.dto
 
 class MessagesDTO {
     var message: String? = null
