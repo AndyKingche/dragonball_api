@@ -5,6 +5,19 @@ package com.app.dragonball.model
 import jakarta.persistence.*
 import java.io.Serializable
 
+/**
+ * Representa un personaje en la base de datos.
+ *
+ * Esta clase se utiliza para mapear los datos de un personaje de la tabla `character` en la base de datos.
+ * Contiene información sobre el nombre, edad, descripción, imagen y nivel de poder de un personaje.
+ *
+ * @property id El identificador único del personaje (clave primaria). Se genera automáticamente.
+ * @property name El nombre del personaje.
+ * @property age La edad del personaje.
+ * @property desc Una breve descripción del personaje.
+ * @property image La URL de la imagen del personaje.
+ * @property powerLevel El nivel de poder del personaje.
+ */
 @Entity
 @Table(name = "character")
 @NamedQuery(name = "CharacterModel", query = "SELECT c FROM CharacterModel c")
